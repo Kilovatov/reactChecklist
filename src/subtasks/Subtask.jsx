@@ -1,18 +1,13 @@
 import React from 'react';
+import { Panel, Button, Glyphicon, InputGroup, Checkbox } from 'react-bootstrap';
 
-class Subtask extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
+const Subtask = (props) => {
         return (
-            <div className="category">
-                <input type="checkbox"/>
-                <span>{this.props.name}</span>
-                <button>edit</button>
-            </div>
+            <Panel>
+                <Checkbox className="pull-left">{props.name}</Checkbox>
+                <Button className="pull-right"><Glyphicon glyph="pencil"  /></Button>
+                </Panel>
         );
-    }
-}
+};
 
 export default Subtask;
