@@ -1,19 +1,20 @@
 import React from 'react';
+import CategoryList from './CategoryList';
+import { Panel, Button, Glyphicon, Checkbox } from 'react-bootstrap';
 
-class Category extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
+
+const Category = (props)=> {
         return (
             <div className="category">
-                <span className="left">{this.props.name}</span>
-                <button className="left">edit</button>
-                <button className="rigth">delete</button>
-                <button className="rigth">add</button>
+                <Panel>
+                    <Checkbox className="pull-left">{props.name}</Checkbox>
+                    <Button><Glyphicon glyph="pencil"/></Button>
+                    <Button className="pull-right"><Glyphicon glyph="plus"/></Button>
+                    <Button className="pull-right"><Glyphicon glyph="trash"/></Button>
+                </Panel>
+                <CategoryList categories={props.subs}/>
             </div>
         );
-    }
 }
 
 export default Category;

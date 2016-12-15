@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel, Button, Glyphicon, InputGroup, Checkbox } from 'react-bootstrap';
+import { Panel, Button, Glyphicon, Checkbox } from 'react-bootstrap';
 
 const Subtask = (props) => {
         return (

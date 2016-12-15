@@ -1,24 +1,17 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import {Navbar} from 'react-bootstrap';
 
-class HeaderEditTaskView extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
+const HeaderEditTaskView = (props) => {
         return (
-            <div className="App-header">
-                <h1 className="header-title">
-                    { this.props.taskName }
-                </h1>
-            </div>
+        <Navbar>
+            <Navbar.Header>
+                <Navbar.Brand>
+                    { props.taskName }
+                </Navbar.Brand>
+                <Navbar.Toggle />
+            </Navbar.Header>
+        </Navbar>
         );
-    }
-}
-
-HeaderEditTaskView.propTypes = {
-    taskName: PropTypes.string.isRequired,
 };
 
 export default HeaderEditTaskView;

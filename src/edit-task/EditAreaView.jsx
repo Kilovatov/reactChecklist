@@ -1,22 +1,31 @@
 import React from 'react';
-import Controls from './edit-task-area/Controls'
-import Task from './edit-task-area/Task'
+import {Button, Checkbox, FormGroup, FormControl} from 'react-bootstrap';
 
-class EditAreaView extends React.Component {
+const EditAreaView = () => {
+    return (
+        <form>
+            <FormGroup bsSize="large" className="pull-right">
+                <Button bsStyle="primary">
+                    Save Changes
+                </Button>
+                {'  '}
+                <Button>
+                    Cancel
+                </Button>
+            </FormGroup>
+            <FormGroup bsSize="large">
+                <FormControl type="text" value="title"/>
+            </FormGroup>
 
-    constructor(props) {
-        super(props);
-    }
+            <Checkbox>
+                Done
+            </Checkbox>
 
-    render() {
-        return (
-            <div className="edit-area">
-                <Controls/>
-                <Task/>
-            </div>
-        );
-    }
-}
-
+            <FormGroup>
+                <FormControl componentClass="textarea" value="description"/>
+            </FormGroup>
+        </form>
+    );
+};
 
 export default EditAreaView;

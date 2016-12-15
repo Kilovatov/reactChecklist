@@ -1,22 +1,16 @@
 import React from 'react';
-import AddSubtask from './subtasks/AddSubtask';
+import AddItem from './layout-components/simple-form';
 import SubtasksList from './subtasks/SubtasksList';
+import {Col} from 'react-bootstrap';
 
-class SubtasksView extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div className="subtasks">
-                <AddSubtask/>
-                <SubtasksList/>
-            </div>
-        );
-    }
-}
+const SubtasksView = (props)=> {
+    return (
+        <Col xs={12} md={8}>
+            <AddItem placeholder="Enter task" buttonText="Add"/>
+            <SubtasksList tasks={props.tasks}/>
+        </Col>
+    );
+};
 
 
 export default SubtasksView;

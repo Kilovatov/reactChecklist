@@ -1,25 +1,27 @@
 import React from 'react';
-import SearchBar from './header/SearchBar'
-import ShowActive from './header/ShowActive'
+import {Navbar, Checkbox} from 'react-bootstrap';
+import SimpleForm from './layout-components/simple-form';
 
-class HeaderView extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div className="App-header">
-                <h1 className="header-title">To-Do List</h1>
-                <div className="header-controls">
-                    <ShowActive/>
-                    <SearchBar/>
-                </div>
-            </div>
-        );
-    }
-}
+const HeaderView = () => {
+    return (
+        <Navbar>
+            <Navbar.Header>
+                <Navbar.Brand>
+                    To-Do List
+                </Navbar.Brand>
+                <Navbar.Toggle />
+            </Navbar.Header>
+            <Navbar.Collapse>
+                <Navbar.Form pullRight>
+                    <SimpleForm placeholder="Search" buttonText="Submit" inline/>
+                </Navbar.Form>
+                <Navbar.Form pullRight>
+                    <Checkbox className="header__checkbox">{' '}Show active</Checkbox>
+                </Navbar.Form>
+            </Navbar.Collapse>
+        </Navbar>
+    );
+};
 
 
 export default HeaderView;

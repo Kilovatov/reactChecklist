@@ -1,21 +1,17 @@
 import React from 'react';
-import AddCategory from './task-tree/AddCategory';
+import AddItem from './layout-components/simple-form';
 import CategoryList from './task-tree/CategoryList';
-class TaskTreeView extends React.Component {
+import {Col} from 'react-bootstrap';
 
-    constructor(props) {
-        super(props);
-    }
+const TaskTreeView = (props) => {
+    return (
+        <Col xs={6} md={4}>
+            <AddItem placeholder="Enter category title" buttonText="Add"/>
+            <CategoryList categories={props.categories}/>
+        </Col>
+    );
+};
 
-    render() {
-        return (
-            <div className="task-tree">
-                <AddCategory/>
-                <CategoryList/>
-            </div>
-        );
-    }
-}
 
 
 export default TaskTreeView;
