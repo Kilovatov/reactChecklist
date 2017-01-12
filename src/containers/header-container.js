@@ -2,9 +2,9 @@ import { connect } from 'react-redux'
 import { setVisibilityFilter } from '../actions'
 import Header from '../HeaderView'
 
-const mapStateToProps = (state, showActive) => {
+const mapStateToProps = (state) => {
     return {
-        active: showActive ? 'SHOW_ACTIVE' === state.visibilityFilter : 'SHOW_ALL' === state.visibilityFilter
+        active: 'SHOW_ACTIVE' === state.visibilityFilter
     }
 }
 

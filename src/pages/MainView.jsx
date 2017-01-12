@@ -2,13 +2,14 @@ import React from 'react';
 import FilterHeader from '../containers/header-container'
 import TaskTreeView from '../TaskTreeView'
 import SubtasksView from '../SubtasksView'
-import {Grid, ProgressBar} from 'react-bootstrap';
+import {Grid} from 'react-bootstrap';
+import Progress from '../containers/progress-bar-container'
 
 const MainView  = () => {
         return (
             <div className="App">
                 <FilterHeader />
-                <ProgressBar now={60}/>
+                <Progress/>
                 <Grid>
                     <TaskTreeView />
                     <SubtasksView />

@@ -2,7 +2,7 @@ import React from 'react';
 import {Navbar, Checkbox} from 'react-bootstrap';
 import SimpleForm from './layout-components/simple-form';
 
-const HeaderView = ( {onChange, showActive} ) => {
+const HeaderView = ( {onChange, active} ) => {
     return (
         <Navbar>
             <Navbar.Header>
@@ -16,7 +16,7 @@ const HeaderView = ( {onChange, showActive} ) => {
                     <SimpleForm placeholder="Search" buttonText="Submit" inline/>
                 </Navbar.Form>
                 <Navbar.Form pullRight>
-                    <Checkbox className="header__checkbox" checked={ showActive } onChange={ onChange }>{' '}Show active</Checkbox>
+                    <Checkbox className="header__checkbox" checked={ active } onChange={ onChange }>{' '}Show active</Checkbox>
                 </Navbar.Form>
             </Navbar.Collapse>
         </Navbar>

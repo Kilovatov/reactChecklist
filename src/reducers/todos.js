@@ -6,7 +6,7 @@ const todo = (state = {}, action) => {
                 title: action.title,
                 text: action.text,
                 completed: false,
-                category: action.category
+                category: action.category || 'uncategorised'
             }
         case 'TOGGLE_TODO':
             if (state.id !== action.id) {

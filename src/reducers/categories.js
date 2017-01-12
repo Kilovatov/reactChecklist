@@ -17,6 +17,8 @@ const categories = (state = [], action) => {
                 ...state,
                 category(undefined, action)
             ]
+        case 'DELETE_CATEGORY':
+            return state.filter(category => category.id !== action.id)
         default:
             return state
     }

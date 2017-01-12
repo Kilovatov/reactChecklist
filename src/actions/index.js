@@ -55,9 +55,9 @@ export const editTodoDetails = (id, completed, title, text) => {
     }
 }
 
-export const deleteTodo = (id) => {
+export const deleteCategory = (id) => {
     return {
-        type: 'DELETE_TODO',
+        type: 'DELETE_CATEGORY',
         id
     }
 }
