@@ -1,17 +1,17 @@
 import React from 'react';
-import HeaderView from '../HeaderView'
+import FilterHeader from '../containers/header-container'
 import TaskTreeView from '../TaskTreeView'
 import SubtasksView from '../SubtasksView'
 import {Grid, ProgressBar} from 'react-bootstrap';
 
-const MainView  = (props) => {
+const MainView  = () => {
         return (
             <div className="App">
-                <HeaderView/>
+                <FilterHeader />
                 <ProgressBar now={60}/>
                 <Grid>
-                    <TaskTreeView categories={props.categories}/>
-                    <SubtasksView tasks={props.categories[0].tasks}/>
+                    <TaskTreeView />
+                    <SubtasksView />
                 </Grid>
             </div>
         );

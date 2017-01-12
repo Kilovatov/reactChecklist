@@ -1,13 +1,11 @@
 import React from 'react';
-import AddItem from './layout-components/simple-form';
-import SubtasksList from './subtasks/SubtasksList';
+import App from './components/App'
 import {Col} from 'react-bootstrap';
 
-const SubtasksView = (props)=> {
+const SubtasksView = ()=> {
     return (
         <Col xs={12} md={8}>
-            <AddItem placeholder="Enter task" buttonText="Add"/>
-            <SubtasksList tasks={props.tasks}/>
+            <App/>
         </Col>
     );
 };
