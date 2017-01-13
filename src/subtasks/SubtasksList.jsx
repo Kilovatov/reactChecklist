@@ -1,5 +1,5 @@
 import React from 'react';
-import Subtask from '../components/Subtask'
+import Subtask from '../components/subtask'
 
 const SubtasksList = (props) => {
         return(

@@ -1,9 +1,8 @@
 import React, { PropTypes } from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
-import App from './../App';
-import MainView from './../pages/MainView'
-import EditTaskView from './../pages/EditTaskView'
+import MainView from '../pages/main-view'
+import EditTaskView from '../pages/edit-task-view'
 
 
 

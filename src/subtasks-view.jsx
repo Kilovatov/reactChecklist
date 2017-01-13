@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './components/App'
+import App from './components/app'
 import {Col} from 'react-bootstrap';
 
 const SubtasksView = ()=> {

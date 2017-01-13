@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import HeaderEditTaskView from '../edit-task/HeaderEditTaskView'
-import EditAreaView from '../edit-task/EditAreaView'
+import HeaderEditTaskView from '../edit-task/header-edit-task-view'
+import EditAreaView from '../edit-task/edit-area-view'
 import EditCategory from '../edit-task/edit-category'
 import CategoryList from './../components/category-list'
 import {Grid, Col} from 'react-bootstrap';

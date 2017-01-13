@@ -1,6 +1,5 @@
 import React from 'react';
 import {Navbar, Checkbox} from 'react-bootstrap';
-import SimpleForm from './layout-components/simple-form';
 
 const HeaderView = ( {onChange, active} ) => {
     return (

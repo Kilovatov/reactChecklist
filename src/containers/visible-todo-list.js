@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { toggleTodo, editTodo, deleteTodo } from '../actions'
-import TodoList from '../components/TodoList'
+import { toggleTodo, editTodo } from '../actions'
+import TodoList from '../components/todo-list'
 
 const getVisibleTodos = (todos, filter) => {
     switch (filter) {
@@ -18,7 +18,6 @@ const getTodosInCategory = (todos, id) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.categoryFilter);
     return {
         todos: getTodosInCategory(getVisibleTodos(state.todos, state.visibilityFilter), state.categoryFilter)
     }
@@ -31,9 +30,6 @@ const mapDispatchToProps = (dispatch) => {
         },
         onEditClick: (id) => {
             dispatch(editTodo(id))
-        },
-        onDeleteClick: (id) => {
-            dispatch(deleteTodo(id))
         }
     }
 }

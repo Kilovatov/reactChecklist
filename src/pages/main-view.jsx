@@ -1,7 +1,7 @@
 import React from 'react';
 import FilterHeader from '../containers/header-container'
-import TaskTreeView from '../TaskTreeView'
-import SubtasksView from '../SubtasksView'
+import TaskTreeView from '../task-tree-view'
+import SubtasksView from '../subtasks-view'
 import {Grid} from 'react-bootstrap';
 import Progress from '../containers/progress-bar-container'
 

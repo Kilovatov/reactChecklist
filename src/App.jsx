@@ -1,10 +1,6 @@
 import React, { Component  } from 'react';
 import './App.css';
-import MainView from './pages/MainView'
-
-import EditTaskView from './pages/EditTaskView'
-
-
+import MainView from './pages/main-view'
 
 const App = ({  }) => {
     return (

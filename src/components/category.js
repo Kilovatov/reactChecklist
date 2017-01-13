@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { Panel, Button, Glyphicon, Checkbox } from 'react-bootstrap';
+import { Panel, Button, Glyphicon } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 import { setCategoryFilter } from '../actions'

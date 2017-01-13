@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import {Button, Checkbox, FormGroup, FormControl} from 'react-bootstrap';
-import MainLink  from '../containers/main-link'
 import { editTodoDetails, toggleTodo, setCategoryFilter } from '../actions'
 import { browserHistory } from 'react-router'
 

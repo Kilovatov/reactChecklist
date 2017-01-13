@@ -70,11 +70,3 @@ export const deleteCategory = (id) => {
     }
 }
 
-export const checkCategory = (id, done) => {
-    console.log(id + done);
-    return {
-        type: 'CHECK_CATEGORY',
-        id,
-        done
-    }
-}

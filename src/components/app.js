@@ -1,7 +1,7 @@
 import React from 'react'
-import Footer from './Footer'
+import Footer from './footer'
 import AddTodo from '../layout-components/simple-form'
-import VisibleTodoList from '../containers/VisibleTodoList'
+import VisibleTodoList from '../containers/visible-todo-list'
 import { addTodo } from './../actions'
 import getCategory from '../common/utils';
 

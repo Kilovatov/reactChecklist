@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import Todo from './Todo'
+import Todo from './todo'
 
 const TodoList = ({ todos, onTodoClick, onEditClick, onDeleteClick }) => (
 <div className="subtasks-list">
