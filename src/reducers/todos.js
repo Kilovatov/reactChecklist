@@ -16,9 +16,9 @@ const todo = (state = {}, action) => {
             return Object.assign({}, state, {
                 completed: !state.completed
             })
+        // case 'CHECK_CATEGORY':
+        //     return state.map(todo => {if (todo.category === action.id) {todo.completed = action.done}})
         case 'EDIT_TODO_DETAILS':
-            console.log(11);
-            console.log(action);
             if (state.id !== action.id) {
                 return state
             }
@@ -42,6 +42,8 @@ const todos = (state = [], action) => {
                 ...state,
                 todo(undefined, action)
             ]
+        case 'DELETE_CATEGORY':
+            return state.filter(t => t.category !== action.id)
         case 'TOGGLE_TODO':
         case 'EDIT_TODO_DETAILS':
             return state.map(t =>

@@ -5,14 +5,14 @@ import { connect } from 'react-redux'
 
 const CategotyList = ({ categories, onCategoryEdit }) => (
     <div>
-        {categories.map(category=><Category key={category.id} {...category} />)}
+        {categories.map(category=><Category key={category.id} {...category}/>)}
     </div>
 )
 
 CategotyList.propTypes = {
     categories: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired
+        done: PropTypes.bool.isRequired
     }).isRequired).isRequired
 }
 

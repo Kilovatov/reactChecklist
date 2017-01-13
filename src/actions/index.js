@@ -9,11 +9,11 @@ export const addTodo = (category, title) => {
     }
 }
 
-export const addCategory = (name) => {
+export const addCategory = (title) => {
     return {
         type: 'ADD_CATEGORY',
         id: uuidV1(),
-        name
+        title
     }
 }
 
@@ -55,9 +55,26 @@ export const editTodoDetails = (id, completed, title, text) => {
     }
 }
 
+export const editCategory = (id, title) => {
+    return {
+        type: 'EDIT_CATEGORY',
+        id,
+        title
+    }
+}
+
 export const deleteCategory = (id) => {
     return {
         type: 'DELETE_CATEGORY',
         id
+    }
+}
+
+export const checkCategory = (id, done) => {
+    console.log(id + done);
+    return {
+        type: 'CHECK_CATEGORY',
+        id,
+        done
     }
 }

@@ -2,38 +2,49 @@ import React from 'react';
 import { connect } from 'react-redux'
 import HeaderEditTaskView from '../edit-task/HeaderEditTaskView'
 import EditAreaView from '../edit-task/EditAreaView'
+import EditCategory from '../edit-task/edit-category'
 import CategoryList from './../components/category-list'
 import {Grid, Col} from 'react-bootstrap';
 import getId from '../common/utils'
 
-const EditTaskView = ( {todo} ) => {
+const EditTaskView = ( {editable} ) => {
     return (
         <div className="App">
-            <HeaderEditTaskView taskName={todo.title}/>
+            <HeaderEditTaskView taskName={editable.title}/>
             <Grid>
                 <Col xs={6} md={4}>
                     <CategoryList/>
                 </Col>
+                {editable.category &&
                 <Col xs={12} md={8}>
-                    <EditAreaView todo={todo}/>
+                    <EditAreaView todo={editable}/>
                 </Col>
+                }
+                {!editable.category &&
+                <Col xs={12} md={8}>
+                    <EditCategory category={editable}/>
+                </Col>
+                }
 
             </Grid>
         </div>
     );
 };
 
-const getTodoByUrl = (state) => {
+const getEditableByUrl = (state) => {
     const id = getId();
     for (var todo of state.todos) {
         if (todo.id === id)
             return todo;
     }
+    for (var cat of state.categories) {
+        if (cat.id === id)
+            return cat;
+    }
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
-    return         {todo: getTodoByUrl(state)}
+    return         {editable: getEditableByUrl(state)}
 }
 
 const EditTask = connect(

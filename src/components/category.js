@@ -3,26 +3,28 @@ import { Panel, Button, Glyphicon, Checkbox } from 'react-bootstrap';
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 import { setCategoryFilter } from '../actions'
-import { deleteCategory } from '../actions'
+import { deleteCategory  } from '../actions'
 
 
-let Category = ({ name, id, active, onClick, onDelete }) => (
+let Category = ({ title, id, active, onClick, onDelete, onCheckbox, done, onEdit }) => (
     <Panel bsStyle={active ? 'primary' : 'default'} onClick={e => {
         e.preventDefault()
         browserHistory.push('/main/' + id)
         onClick()
     }}>
-        <Checkbox className="pull-left">
-            {name}
-        </Checkbox>
-        <Button><Glyphicon glyph="pencil"/></Button>
-        <Button className="pull-right" onClick={onDelete}><Glyphicon glyph="trash"/></Button>
+         <Glyphicon glyph={done ? 'ok' : ''} className="pull-left"/>{title}
+        {id === 'uncategorised' || < Button className="pull-right" onClick={onDelete}><Glyphicon glyph="trash"/></Button>}
+
+        {id === 'uncategorised' ||  <Button className="pull-right" onClick={(e) => {e.stopPropagation(); onEdit()}}><Glyphicon glyph="pencil"/></Button>}
+
     </Panel>
 )
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(state);
-    return {active: state.categoryFilter===ownProps.id};
+    return {
+        active: state.categoryFilter===ownProps.id,
+        done: state.todos.filter(t => t.category === ownProps.id).reduce((a,b) =>  {return {completed: a.completed && b.completed}}, {completed: true}).completed
+    };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -33,12 +35,14 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         onDelete: () => {
             dispatch(deleteCategory(ownProps.id))
         },
-
+        onEdit: () => {
+            browserHistory.push('/edit/' + ownProps.id)
+        }
     }
 }
 
 Category.propTypes = {
-    name: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired
 }
 
 Category = connect(
