@@ -1,3 +1,3 @@
 ##Check List on React
 
-[Preview](https://kilovatov.github.io/reactChecklist/)
+[Preview](https://kilovatov.github.io/main/)
